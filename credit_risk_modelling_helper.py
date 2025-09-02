@@ -1,9 +1,18 @@
+import os
 import joblib
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
-model_path=r"C:\Users\PREDATOR\Downloads\artifacts.joblib"
+# Get base directory of this file
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Point to artifacts.joblib inside your repo
+model_path = os.path.join(BASE_DIR, "artifacts.joblib")
+
+# Load model
+model_data = joblib.load(model_path)
+
 
 #load the data and its components
 model_data=joblib.load(model_path)
